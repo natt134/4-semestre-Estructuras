@@ -19,6 +19,7 @@ def llenarvector2 (lista2):
     for i in range (cantidad):
         lista2.append(random.randint(1,100))
     return lista2
+
 def suma(lista1,lista2):
     total=0
     total2=0
@@ -29,10 +30,10 @@ def suma(lista1,lista2):
         total2 += numero2
     
     if total>total2:
-        print(f"El arreglo con mayor suma es el #1, con la suma total de: {total}")
+        return(f"El arreglo con mayor suma es el #1, con la suma total de: {total}")
     else:
-        print(f"El arreglo con mayor suma es el #2, con la suma total de: {total2}") 
-    return total,total2
+        return(f"El arreglo con mayor suma es el #2, con la suma total de: {total2}") 
+
 def NumeroMayor (lista1,lista2):
     Nmayor1=lista1[0]
     Nmayor2=lista2[0]
@@ -47,6 +48,7 @@ def NumeroMayor (lista1,lista2):
     else:
         print("El numero mayor se encuentra en el arreglo #2")
     return Nmayor1,Nmayor2
+
 def NumeroMenor (lista1,lista2):
     Nmenor1=lista1[0]
     Nmenor2=lista2[0]
@@ -61,17 +63,31 @@ def NumeroMenor (lista1,lista2):
     else:
         print("El numero menor se encuentra en el arreglo #2")
     return Nmenor1,Nmenor2
+
 def PromedioConjunto(lista1,lista2):
-    promedio=0
-    total1,total2=suma(lista1,lista2)
+    total1=sum(lista1)
+    total2=sum(lista2)
     sumatotal=total1+total2
     cantidadtotal=len(lista1)+len(lista2)
     promedio=sumatotal/cantidadtotal
+    print(f"El promedio es igual a: {promedio}")
     return promedio
 
-
-  
- 
+def PromedioIndividual (lista1,lista2):
+    promedio1=(sum(lista1)/len(lista1))
+    print(f"El promedio del arreglo #1 es : {promedio1}")
+    promedio2=(sum(lista2)/len(lista2))
+    print(f"El promedio del arreglo #2 es : {promedio2}")
+    promedio=PromedioConjunto(lista1,lista2)
+    if promedio1 > promedio:
+     print("EL promedio #1 está por encima del promedio en conjunto ")
+    else:
+     print("EL promedio #1 está por debajo del promedio en conjunto ")
+    if promedio2>promedio:
+     print("El promedio #2 esta por encima del promedio en conjunto")
+    else:
+     print("El promedio #2 esta por debajo del promedio en conjunto")  
+    return promedio1,promedio2
 
 milista1=[]
 milista2=[]
@@ -79,10 +95,11 @@ llenarvector1(milista1)
 print(f"Arreglo #1: {(milista1)}")
 llenarvector2(milista2)
 print(f"Arreglo #2: {(milista2)}")
-suma(milista1,milista2)
+print(suma(milista1,milista2))
 NumeroMayor(milista1,milista2)
 NumeroMenor(milista1,milista2)
 PromedioConjunto(milista1,milista2)
+PromedioIndividual(milista1,milista2)
 
 
     

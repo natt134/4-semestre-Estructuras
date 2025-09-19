@@ -1,3 +1,16 @@
+#1. Llenar un arreglo de n elementos con números generados con la función random. N es
+#ingresado por el usuario. Diseñe un menú con las siguientes operaciones.
+#a. Imprimir arreglo original (El primero que se generó)
+#b. Suma
+#c. Promedio
+#d. Mayor
+#e. Menor
+#f. Ordenar ascendente (No perder el arreglo original; el del punto a)
+#g. Ordenar descendente (No perder el arreglo original; el del punto a)
+#h. Moda
+#i. Mediana
+#j. Buscar. Decir si encuentra el número, en qué posición(es) está, cuantas veces está
+
 import random
 import statistics
 
@@ -46,7 +59,8 @@ def Buscar (lista):
 
     repeticiones= milista.count(BscNumero)
     print(f"Se repite: {repeticiones} vez/veces")
-
+  else:
+   print(f"El numero: {BscNumero} no esta dentro de la lista")
 
 
 
